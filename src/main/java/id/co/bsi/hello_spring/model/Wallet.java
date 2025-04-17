@@ -1,7 +1,6 @@
 package id.co.bsi.hello_spring.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,6 +10,9 @@ import java.util.Date;
 @Entity
 
 public class Wallet {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long user_id;
     private String account_number;

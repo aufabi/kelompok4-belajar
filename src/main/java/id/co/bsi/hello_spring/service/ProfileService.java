@@ -1,7 +1,6 @@
 package id.co.bsi.hello_spring.service;
 
 import id.co.bsi.hello_spring.model.User;
-import id.co.bsi.hello_spring.model.Wallet;
 import id.co.bsi.hello_spring.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

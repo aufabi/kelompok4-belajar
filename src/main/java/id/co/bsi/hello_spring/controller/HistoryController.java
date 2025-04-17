@@ -1,21 +1,23 @@
 package id.co.bsi.hello_spring.controller;
 
 import id.co.bsi.hello_spring.dto.response.HistoryResponse;
+import id.co.bsi.hello_spring.service.HistoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/api/history")
 public class HistoryController {
-    @GetMapping("api/history")
-    public ResponseEntity<HistoryResponse> getHistory (){
-        HistoryResponse historyResponse = new HistoryResponse();
-        historyResponse.setDate("16/04/2025");
-        historyResponse.setType("Transfer");
-        historyResponse.setFromto("Ikbal");
-        historyResponse.setDescription("Bayar hutang");
-        historyResponse.setAmount("Rp 1.500.000");
 
-        return ResponseEntity.ok(historyResponse);
+    @Autowired
+    private HistoryService historyService;
+
+    @GetMapping
+    public ResponseEntity<List<HistoryResponse>> getHistory() {
+        List<HistoryResponse> historyList = historyService.getAllHistory();
+        return ResponseEntity.ok(historyList);
     }
 }

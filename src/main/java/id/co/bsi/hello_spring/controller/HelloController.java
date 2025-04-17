@@ -19,7 +19,7 @@ public class HelloController {
     @GetMapping("/users")
     public ResponseEntity<User> getUser() {
         User user = new User();
-        user.setId(1);
+        user.setId(1L);
         user.setEmail("admin@gmail.com");
         user.setUsername("admin");
         return ResponseEntity.ok(user);

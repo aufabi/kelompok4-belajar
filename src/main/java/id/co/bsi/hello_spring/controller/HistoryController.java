@@ -3,7 +3,9 @@ package id.co.bsi.hello_spring.controller;
 import id.co.bsi.hello_spring.dto.response.HistoryResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class HistoryController {
     @GetMapping("api/history")
     public ResponseEntity<HistoryResponse> getHistory (){
